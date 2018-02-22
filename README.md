@@ -30,9 +30,9 @@ heroku open
 The index.js has the main code of server.
 
  ## Plugins Used
-		1.[WordFrequenter](https://www.npmjs.com/package/wordfrequenter).
-		2.[Express](https://www.npmjs.com/package/express).
-		3.[Request](https://www.npmjs.com/package/request).
-		4.[Body-parser](https://www.npmjs.com/package/body-parser)
+		1. [WordFrequenter](https://www.npmjs.com/package/wordfrequenter).
+		2. [Express](https://www.npmjs.com/package/express).
+		3. [Request](https://www.npmjs.com/package/request).
+		4. [Body-parser](https://www.npmjs.com/package/body-parser)
 
 ##Test this app [Here](https://frontttt.herokuapp.com/).
