@@ -30,18 +30,43 @@ app.get('/', function(request, response) {
 app.post('/num', function (req, res) {
 	//console.log("I am Getting Tiggered");
 	console.log(req.body);
-	//request fetches the document from web and data is stored in body
 	request('http://terriblytinytales.com/test.txt', function (error, response, body) {
 	  theText=body.toString();
 	  if(theText!=""){
-	  		const testWords = theText;
-	  		const wf = new Freq(testWords.split(' '))
-	  		wf.set('string')
-	  		var sorted=wf.list().reverse(); // as wordfrequenter gives array of word from low to high frequency
-	  		sorted.sort(function (a, b) {
-	  		  return b.count - a.count;
-	  		});
-	  	 	res.send(sorted.slice(0,req.body.val))	
+	  	var arrayOfWords = theText.split(/\s+/);
+	  	var mapWord = {};
+	  	arrayOfWords.forEach(function (key) {
+	  	    if (mapWord.hasOwnProperty(key)) {
+	  	      mapWord[key]++;
+	  	    } else {
+	  	      mapWord[key] = 1;
+	  	    }
+	  	  });
+	  	var sortedArray = [];
+	  	  sortedArray = Object.keys(mapWord).map(function(key) {
+	  	    return {
+	  	      word: key,
+	  	      count: mapWord[key]
+	  	    };
+	  	  });
+
+	  	  sortedArray.sort(function(a, b) {
+	  	    return b.count - a.count;
+	  	  });
+			//OLD CODE
+	  		// const testWords = theText;
+	  		// const wf = new Freq(testWords.split(' '))
+	  		// wf.set('string')
+	  		// //console.dir(wf.get('cool'))
+	  		// //console.dir(wf.list())
+	  		// var sorted=wf.list().reverse();
+	  		// sorted.sort(function (a, b) {
+	  		//   return b.count - a.count;
+	  		// });
+	  		if(parseInt(req.body.val)<sortedArray.length)
+	  	 		res.send(sortedArray.slice(0,req.body.val))	
+	  	 	else
+	  	 		res.send(sortedArray)	
 	  }
 	});	
 })
