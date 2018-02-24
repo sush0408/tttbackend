@@ -1,7 +1,7 @@
 //imports of libraries
 var express = require('express')
 const bodyParser = require('body-parser');//Parse incoming request bodies in a middleware before handlers
-const Freq = require('wordfrequenter') //wordfrequenter counts frequency of word in text
+//const Freq = require('wordfrequenter') //wordfrequenter counts frequency of word in text
 var fs = require('fs'); 
 var request = require('request'); //to Make http Calls
 var theText="";
