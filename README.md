@@ -10,7 +10,6 @@ Make sure you have [Node.js](http://nodejs.org/)
 git clone git@github.com:heroku/node-js-sample.git # or clone your own fork
 cd node-js-sample
 npm install
-npm install wordfrequenter
 npm install express
 npm install request
 npm start
@@ -30,9 +29,8 @@ heroku open
 The index.js has the main code of server.
 
  ## Plugins Used
-		1. [WordFrequenter](https://www.npmjs.com/package/wordfrequenter).
-		2. [Express](https://www.npmjs.com/package/express).
-		3. [Request](https://www.npmjs.com/package/request).
-		4. [Body-parser](https://www.npmjs.com/package/body-parser)
+		1. [Express](https://www.npmjs.com/package/express).
+		2. [Request](https://www.npmjs.com/package/request).
+		3. [Body-parser](https://www.npmjs.com/package/body-parser)
 
 Frontend code here : (https://github.com/sush0408/tttfrontend)
