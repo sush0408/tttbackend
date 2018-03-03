@@ -33,7 +33,7 @@ app.post('/num', function (req, res) {
 	request('http://terriblytinytales.com/test.txt', function (error, response, body) {
 	  theText=body.toString();
 	  if(theText!=""){
-	  	var arrayOfWords = theText.toLowerCase().replace(/\?/g, '').split(/\s+/);
+	  	var arrayOfWords = theText.toLowerCase().replace(/[.,\/#!$%\^&\*;?:{}=\-_`~()]/g,"").split(/\s+/);
 	  	var mapWord = {};
 	  	arrayOfWords.forEach(function (key) {
 	  	    if (mapWord.hasOwnProperty(key)) {
